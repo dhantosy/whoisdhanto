@@ -17,6 +17,14 @@
   z-index: 2;
 }
 
+.logoLayer {
+  opacity: 0.7;
+}
+
+.logoWrapper {
+  cursor: help;
+}
+
 .socials {
   display: flex;
   gap: 40px;
@@ -24,9 +32,30 @@
   z-index: 2;
 }
 
+.socialItem {
+  position: relative;
+}
+
 .icon {
   width: 50px;
   height: 50px;
+  position: relative;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.iconShadow {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  color:#EC65C3;
+  top: 4px;
+  left: 7px;
+  opacity: 0.7;
+}
+
+.content__title {
+  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
 }
 
 @media only screen and (max-width: 640px) {
