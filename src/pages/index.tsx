@@ -1,17 +1,17 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MouseParallaxContainer, MouseParallaxChild } from 'react-parallax-mouse';
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaDesktop, FaArrowRight, FaTimes } from 'react-icons/fa'
 
 import styles from '@/styles/Home.module.css'
 import { useCallback, useState } from 'react';
 
 export default function Home() {
   const [bgState, setBgState] = useState(() => ('/assets/images/background-1.jpg'));
+  const [isProjectShown, setIsProjectShown] = useState(false);
 
-  const nextWord = (function () {
+  const nextImage = (function () {
     const bgData = [
       '/assets/images/background-2.jpg',
       '/assets/images/background-3.jpg',
@@ -26,8 +26,9 @@ export default function Home() {
     }
   }());
 
-  const handleMobileMenuClick = useCallback(() => {
-    setBgState(nextWord());
+  const handleLogoClick = useCallback(() => {
+    setBgState(nextImage());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -55,6 +56,76 @@ export default function Home() {
         <meta name='theme-color' content='#ffffff' />
       </Head>
       <main className={styles.main}>
+        <div className={isProjectShown ? `${styles.projectWrapper} ${styles.show}` : styles.projectWrapper}>
+          <div className={styles.projectClose} onClick={() => setIsProjectShown(false)}>
+            <FaTimes size={40} />
+          </div>
+          <div className={styles.projectInner}>
+            <h1 className=''>Recent Projects</h1>
+            <div>
+              <div className={styles.projectItem}>
+                <div>
+                  <h3>Sightsea Expeditions</h3>
+                  <p>UI/UX, Front End Development, Content Creation</p>
+                </div>
+                <div className={styles.projectLink}>
+                  <a href="https://www.sightseaexpeditions.com/" target='_blank'>
+                    <div>View Site</div>
+                    <div className={styles.projectIcon}><FaArrowRight /></div>
+                  </a>
+                </div>
+              </div>
+              <div className={styles.projectItem}>
+                <div>
+                  <h3>Trip by the Sea</h3>
+                  <p>UI/UX, Front End Development, Content Creation</p>
+                </div>
+                <div className={styles.projectLink}>
+                  <a href="https://www.tripbythesea.com/" target='_blank'>
+                    <div>View Site</div>
+                    <div className={styles.projectIcon}><FaArrowRight /></div>
+                  </a>
+                </div>
+              </div>
+              <div className={styles.projectItem}>
+                <div>
+                  <h3>Joga Yoga Training</h3>
+                  <p>UI/UX, Front End Development</p>
+                </div>
+                <div className={styles.projectLink}>
+                  <a href="https://jogayogatraining-dhanto-santikas-projects.vercel.app/" target='_blank'>
+                    <div>View Site</div>
+                    <div className={styles.projectIcon}><FaArrowRight /></div>
+                  </a>
+                </div>
+              </div>
+              <div className={styles.projectItem}>
+                <div>
+                  <h3>Bali Stingray Diver</h3>
+                  <p>UI/UX, Front End Development</p>
+                </div>
+                <div className={styles.projectLink}>
+                  <a href="https://www.balistingraydiver.com/" target='_blank'>
+                    <div>View Site</div>
+                    <div className={styles.projectIcon}><FaArrowRight /></div>
+                  </a>
+                </div>
+              </div>
+              <div className={styles.projectItem}>
+                <div>
+                  <h3>DCI Indonesia</h3>
+                  <p>Front End Development</p>
+                </div>
+                <div className={styles.projectLink}>
+                  <a href="https://dci-indonesia.com/" target='_blank'>
+                    <div>View Site</div>
+                    <div className={styles.projectIcon}><FaArrowRight /></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className='glitch'>
           {Array.apply(null, Array(5)).map((_, i) => {
             return (
@@ -70,7 +141,7 @@ export default function Home() {
         </div>
         <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1}>
           <div className={styles.center}>
-            <div className={styles.logoWrapper} onClick={handleMobileMenuClick}>
+            <div className={styles.logoWrapper} onClick={handleLogoClick}>
                 <MouseParallaxChild factorX={0.4} factorY={0.4}>
                   <Image
                     className={styles.logo}
@@ -97,32 +168,57 @@ export default function Home() {
                 </MouseParallaxChild>
             </div>
             <section className={styles.socials}>
+              <div
+                onClick={() => setIsProjectShown(true)}
+                aria-label='projects'
+                className={styles.socialItemWrapper}
+              >
+                <div className={`glitch-social ${styles.socialItem}`}>
+                  <div className={styles.socialIcon}>
+                    <div className={styles.icon}>
+                      <FaDesktop />
+                    </div>
+                    <div className={styles.iconShadow}>
+                      <FaDesktop />
+                    </div>
+                  </div>
+                  <div className={styles.socialText}>Projects</div>
+                </div>
+              </div>
               <Link
                 href='https://www.linkedin.com/in/dhantosy/'
                 target='_blank'
                 aria-label='linkedin'
+                className={styles.socialItemWrapper}
               >
                 <div className={`glitch-social ${styles.socialItem}`}>
-                  <div className={styles.icon}>
-                    <FaLinkedin />
+                  <div className={styles.socialIcon}>
+                    <div className={styles.icon}>
+                      <FaLinkedin />
+                    </div>
+                    <div className={styles.iconShadow}>
+                      <FaLinkedin />
+                    </div>
                   </div>
-                  <div className={styles.iconShadow}>
-                    <FaLinkedin />
-                  </div>
+                  <div className={styles.socialText}>LinkedIn</div>
                 </div>
               </Link>
               <Link
                 href='https://github.com/dhantosy'
                 target='_blank'
                 aria-label='github'
+                className={styles.socialItemWrapper}
               >
                 <div className={`glitch-social ${styles.socialItem}`}>
-                  <div className={styles.icon}>
-                    <FaGithub />
+                  <div className={styles.socialIcon}>
+                    <div className={styles.icon}>
+                      <FaGithub />
+                    </div>
+                    <div className={styles.iconShadow}>
+                      <FaGithub />
+                    </div>
                   </div>
-                  <div className={styles.iconShadow}>
-                    <FaGithub />
-                  </div>
+                  <div className={styles.socialText}>Github</div>
                 </div>
               </Link>
             </section>
