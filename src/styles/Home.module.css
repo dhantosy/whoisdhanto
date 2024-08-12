@@ -73,15 +73,17 @@
 }
 
 .projectWrapper {
-  height: 100vh;
+  height: 0;
   width: 100%;
   background: rgba(0,0,0,0.8);
-  display: none;
+  visibility: hidden;
   position: absolute;
   z-index: 3;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 50px;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
 }
 
 .projectWrapper h1 {
@@ -180,7 +182,9 @@
 }
 
 .show {
-  display: block;
+  height: 100vh;
+  visibility: visible;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -238,7 +242,7 @@
   }
 
   .projectClose {
-    padding: 20px 10px 0 0;
+    padding: 30px 10px 0 0;
   }
 
   .projectInner h1 {
