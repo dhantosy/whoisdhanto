@@ -151,7 +151,7 @@ export default function Home() {
           })}
         </div>
         <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1}>
-          <div className={styles.center}>
+          <div className={isProjectShown ? `${styles.center} ${styles.down}` : styles.center}>
             <div className={styles.logoWrapper} onClick={handleLogoClick}>
                 <MouseParallaxChild factorX={0.4} factorY={0.4}>
                   <Image

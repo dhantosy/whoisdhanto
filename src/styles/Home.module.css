@@ -10,6 +10,12 @@
   height: 100vh;
   position: relative;
   max-width: 100%;
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.down {
+  transform: translateY(100%);
 }
 
 .logo {
@@ -73,17 +79,15 @@
 }
 
 .projectWrapper {
-  height: 0;
+  height: 100vh;
   width: 100%;
-  background: rgba(0,0,0,0.8);
-  visibility: hidden;
   position: absolute;
   z-index: 3;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 50px;
+  transform: translateY(-100%);
   transition: all 0.2s ease-in-out;
-  opacity: 0;
 }
 
 .projectWrapper h1 {
@@ -182,9 +186,7 @@
 }
 
 .show {
-  height: 100vh;
-  visibility: visible;
-  opacity: 1;
+  transform: translateY(0);
 }
 
 .projectLogo {
