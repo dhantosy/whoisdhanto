@@ -204,6 +204,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     flex-basis: 70%;
+    padding-bottom: 80px;
   }
 }
 
@@ -238,6 +239,10 @@
 
   .projectClose {
     padding: 20px 20px 0 0;
+  }
+
+  .projectInner h1 {
+    font-size: 48px;
   }
 }
 

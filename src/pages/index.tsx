@@ -61,7 +61,7 @@ export default function Home() {
             <FaTimes size={40} />
           </div>
           <div className={styles.projectInner}>
-            <h1 className=''>Recent Projects</h1>
+            <h1>Freelance Projects</h1>
             <div>
               <div className={styles.projectItem}>
                 <div>
