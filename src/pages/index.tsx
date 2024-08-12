@@ -61,7 +61,18 @@ export default function Home() {
             <FaTimes size={40} />
           </div>
           <div className={styles.projectInner}>
-            <h1>Freelance Projects</h1>
+            <div className={styles.projectLogo}>
+              <Image
+                className={styles.projectImage}
+                src='/assets/images/freelance-logo.png'
+                alt='freelance image'
+                width={600}
+                height={200}
+                sizes={`100vw, 33vw`}
+                priority
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
             <div>
               <div className={styles.projectItem}>
                 <div>
