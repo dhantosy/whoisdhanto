@@ -198,6 +198,7 @@
   max-width: 550px;
   margin: 0 auto 150px;
   display: block;
+  cursor: help;
 }
 
 @media only screen and (max-width: 1024px) {

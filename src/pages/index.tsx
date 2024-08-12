@@ -61,7 +61,7 @@ export default function Home() {
             <FaTimes size={40} />
           </div>
           <div className={styles.projectInner}>
-            <div className={styles.projectLogo}>
+            <div className={styles.projectLogo} onClick={handleLogoClick}>
               <Image
                 className={styles.projectImage}
                 src='/assets/images/freelance-logo.png'
