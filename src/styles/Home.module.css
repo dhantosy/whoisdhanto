@@ -87,6 +87,7 @@
   -webkit-backdrop-filter: blur(20px);
   padding: 50px;
   transform: translateY(-100%);
+  opacity: 0;
   transition: all 0.2s ease-in-out;
 }
 
@@ -150,6 +151,10 @@
   align-items: center;
 }
 
+.projectItem:last-child {
+  margin-bottom: 0;
+}
+
 .projectItem:hover h3 {
   animation-name: glitch-anim-1;
   animation-duration: 2s;
@@ -187,6 +192,7 @@
 
 .show {
   transform: translateY(0);
+  opacity: 1;
 }
 
 .projectLogo {
@@ -195,10 +201,13 @@
 }
 
 .projectImage {
-  max-width: 550px;
   margin: 0 auto 150px;
   display: block;
   cursor: help;
+}
+
+.projectParallax {
+  height: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -226,7 +235,7 @@
   }
 
   .projectImage {
-    margin: 30px auto -30px;
+    margin: 0 auto -30px;
     max-width: 100%;
   }
 
@@ -260,8 +269,12 @@
     margin-bottom: 40px;
   }
 
+  .projectItem:last-child {
+    margin-bottom: 60px;
+  }
+
   .projectWrapper {
-    padding: 20px;
+    padding: 20px 20px 0;
   }
 
   .projectClose {

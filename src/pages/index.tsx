@@ -60,82 +60,86 @@ export default function Home() {
           <div className={styles.projectClose} onClick={() => setIsProjectShown(false)}>
             <FaTimes size={40} />
           </div>
-          <div className={styles.projectInner}>
-            <div className={styles.projectLogo} onClick={handleLogoClick}>
-              <Image
-                className={styles.projectImage}
-                src='/assets/images/freelance-logo.png'
-                alt='freelance image'
-                width={600}
-                height={200}
-                sizes={`100vw, 33vw`}
-                priority
-                style={{ objectFit: 'contain' }}
-              />
+          <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1} className={styles.projectParallax}>
+            <div className={styles.projectInner}>
+              <div className={styles.projectLogo} onClick={handleLogoClick}>
+                <MouseParallaxChild factorX={0.4} factorY={0.4}>
+                  <Image
+                    className={styles.projectImage}
+                    src='/assets/images/freelance-logo.png'
+                    alt='freelance image'
+                    sizes={`100vw, 33vw`}
+                    priority
+                    width={800}
+                    height={250}
+                    style={{ objectFit: 'contain' }}
+                  />
+                </MouseParallaxChild>
+              </div>
+              <div>
+                <div className={styles.projectItem}>
+                  <div>
+                    <h3>Sightsea Expeditions</h3>
+                    <p>UI/UX, Front End Development, Content Creation</p>
+                  </div>
+                  <div className={styles.projectLink}>
+                    <a href="https://www.sightseaexpeditions.com/" target='_blank'>
+                      <div>View Site</div>
+                      <div className={styles.projectIcon}><FaArrowRight /></div>
+                    </a>
+                  </div>
+                </div>
+                <div className={styles.projectItem}>
+                  <div>
+                    <h3>Trip by the Sea</h3>
+                    <p>UI/UX, Front End Development, Content Creation</p>
+                  </div>
+                  <div className={styles.projectLink}>
+                    <a href="https://www.tripbythesea.com/" target='_blank'>
+                      <div>View Site</div>
+                      <div className={styles.projectIcon}><FaArrowRight /></div>
+                    </a>
+                  </div>
+                </div>
+                <div className={styles.projectItem}>
+                  <div>
+                    <h3>Joga Yoga Training</h3>
+                    <p>UI/UX, Front End Development</p>
+                  </div>
+                  <div className={styles.projectLink}>
+                    <a href="https://jogayogatraining-dhanto-santikas-projects.vercel.app/" target='_blank'>
+                      <div>View Site</div>
+                      <div className={styles.projectIcon}><FaArrowRight /></div>
+                    </a>
+                  </div>
+                </div>
+                <div className={styles.projectItem}>
+                  <div>
+                    <h3>Bali Stingray Diver</h3>
+                    <p>UI/UX, Front End Development</p>
+                  </div>
+                  <div className={styles.projectLink}>
+                    <a href="https://www.balistingraydiver.com/" target='_blank'>
+                      <div>View Site</div>
+                      <div className={styles.projectIcon}><FaArrowRight /></div>
+                    </a>
+                  </div>
+                </div>
+                <div className={styles.projectItem}>
+                  <div>
+                    <h3>DCI Indonesia</h3>
+                    <p>Front End Development</p>
+                  </div>
+                  <div className={styles.projectLink}>
+                    <a href="https://dci-indonesia.com/" target='_blank'>
+                      <div>View Site</div>
+                      <div className={styles.projectIcon}><FaArrowRight /></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className={styles.projectItem}>
-                <div>
-                  <h3>Sightsea Expeditions</h3>
-                  <p>UI/UX, Front End Development, Content Creation</p>
-                </div>
-                <div className={styles.projectLink}>
-                  <a href="https://www.sightseaexpeditions.com/" target='_blank'>
-                    <div>View Site</div>
-                    <div className={styles.projectIcon}><FaArrowRight /></div>
-                  </a>
-                </div>
-              </div>
-              <div className={styles.projectItem}>
-                <div>
-                  <h3>Trip by the Sea</h3>
-                  <p>UI/UX, Front End Development, Content Creation</p>
-                </div>
-                <div className={styles.projectLink}>
-                  <a href="https://www.tripbythesea.com/" target='_blank'>
-                    <div>View Site</div>
-                    <div className={styles.projectIcon}><FaArrowRight /></div>
-                  </a>
-                </div>
-              </div>
-              <div className={styles.projectItem}>
-                <div>
-                  <h3>Joga Yoga Training</h3>
-                  <p>UI/UX, Front End Development</p>
-                </div>
-                <div className={styles.projectLink}>
-                  <a href="https://jogayogatraining-dhanto-santikas-projects.vercel.app/" target='_blank'>
-                    <div>View Site</div>
-                    <div className={styles.projectIcon}><FaArrowRight /></div>
-                  </a>
-                </div>
-              </div>
-              <div className={styles.projectItem}>
-                <div>
-                  <h3>Bali Stingray Diver</h3>
-                  <p>UI/UX, Front End Development</p>
-                </div>
-                <div className={styles.projectLink}>
-                  <a href="https://www.balistingraydiver.com/" target='_blank'>
-                    <div>View Site</div>
-                    <div className={styles.projectIcon}><FaArrowRight /></div>
-                  </a>
-                </div>
-              </div>
-              <div className={styles.projectItem}>
-                <div>
-                  <h3>DCI Indonesia</h3>
-                  <p>Front End Development</p>
-                </div>
-                <div className={styles.projectLink}>
-                  <a href="https://dci-indonesia.com/" target='_blank'>
-                    <div>View Site</div>
-                    <div className={styles.projectIcon}><FaArrowRight /></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          </MouseParallaxContainer>
         </div>
         <div className='glitch'>
           {Array.apply(null, Array(5)).map((_, i) => {
