@@ -95,7 +95,7 @@ export default function Home() {
                     <p>UI/UX, Front End Development, Content Creation</p>
                   </div>
                   <div className={styles.projectLink}>
-                    <a href="https://www.tripbythesea.com/" target='_blank'>
+                    <a href="https://tripbythesea.vercel.app/" target='_blank'>
                       <div>View Site</div>
                       <div className={styles.projectIcon}><FaArrowRight /></div>
                     </a>
